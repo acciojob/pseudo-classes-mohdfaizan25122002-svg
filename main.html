@@ -1,16 +1,81 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo Classes Demo</title>
+    <style>
+        /* 1. Background Color using :root */
+        :root {
+            --bg-color: rgb(135, 206, 235);
+        }
 
+        body {
+            background-color: var(--bg-color);
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* 2. Article Paragraph Styles */
+        article p:first-child {
+            background-color: black;
+            color: white;
+        }
+
+        article p:nth-child(2) {
+            /* Standard text color inherited from body */
+        }
+
+        article p:last-child {
+            color: red;
+        }
+
+        /* 3. Unordered List Styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            width: 50%;
+            padding: 10px;
+            background-color: gray; /* Default for even items */
+        }
+
+        /* Odd items white background */
+        li:nth-child(odd) {
+            background-color: white;
+        }
+
+        /* First and last items font size */
+        li:first-child, 
+        li:last-child {
+            font-size: 22px;
+        }
+
+        /* Third-to-last item pink background */
+        li:nth-last-child(3) {
+            background-color: pink;
+        }
+    </style>
+</head>
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+    <article>
+        <p>This is the first paragraph (White text, Black background).</p>
+        <p>This is the second paragraph (Standard text color).</p>
+        <p>This is the third paragraph (Red text).</p>
+    </article>
+
+    <hr>
+
+    <ul>
+        <li>Item 1 (22px font)</li>
+        <li>Item 2</li>
+        <li>Item 3 (Pink background)</li>
+        <li>Item 4</li>
+        <li>Item 5 (22px font)</li>
+    </ul>
 
 </body>
-
 </html>
